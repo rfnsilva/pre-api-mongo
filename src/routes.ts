@@ -17,7 +17,7 @@ routes.get("/", (request: Request, response: Response) => {
 routes.post("/session", session);
 routes.post("/createUser", createUser);
 
-// routes.use(auth);
+routes.use(auth);
 
 routes.get("/getUser/:id", getUser);
 routes.put("/updateUser/:id", updateUser);

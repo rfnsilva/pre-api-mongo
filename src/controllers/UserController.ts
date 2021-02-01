@@ -13,8 +13,6 @@ export const createUser = async (req: Request, res: Response) => {
   const passwordHash = await bcrypt.hash(user.password, 8);
   user.password = passwordHash;
 
-  console.log(user);
-
   const userCreated = await getRepository(User).save(user);
 
   const tokenSession = await token(user.email);
