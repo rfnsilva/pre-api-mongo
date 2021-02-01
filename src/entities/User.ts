@@ -1,4 +1,13 @@
-import { Entity, ObjectIdColumn, ObjectID, Column } from "typeorm";
+import {
+  Entity,
+  ObjectIdColumn,
+  ObjectID,
+  Column,
+  OneToOne,
+  JoinColumn,
+} from "typeorm";
+
+import { Address } from "./Address";
 
 @Entity("user")
 export class User {
@@ -31,4 +40,7 @@ export class User {
 
   @Column("varchar")
   password: string;
+
+  @Column((type) => Address)
+  address: Address;
 }
